@@ -154,26 +154,6 @@ const FounderSection = () => {
                           </span>
                         </div>
                       </div>
-
-                      {/* Video Title Overlay */}
-                      <div className="absolute bottom-10 left-10 right-10 flex justify-between items-end">
-                        <div className="max-w-[70%]">
-                          <p className="text-white font-display font-bold text-2xl leading-tight group-hover:translate-x-2 transition-transform duration-500">
-                            The Aizen <br /> Operating System
-                          </p>
-                        </div>
-                        <div className="pb-1">
-                          <div className="flex gap-1.5">
-                            {[1, 2, 3].map((i) => (
-                              <div
-                                key={i}
-                                className={`w-1 h-4 bg-primary/40 rounded-full animate-pulse transition-all duration-300`}
-                                style={{ animationDelay: `${i * 0.2}s` }}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                      </div>
                     </motion.div>
                   ) : (
                     <motion.div

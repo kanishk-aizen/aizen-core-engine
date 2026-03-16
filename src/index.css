@@ -119,7 +119,7 @@ html {
         hsl(var(--primary) / 0.1) 0%,
         transparent 60%
       );
-    filter: blur(10px);
+    filter: blur(4px);
   }
 
   .page-bg::after {

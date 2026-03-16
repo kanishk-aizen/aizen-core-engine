@@ -61,11 +61,6 @@ const VideoCard = ({
             <Play size={28} className="text-white fill-white ml-1" />
           </div>
         </div>
-
-        {/* Badge Overlay */}
-        <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-[10px] font-bold uppercase tracking-wider text-white">
-          {video.category}
-        </div>
       </div>
 
       <div className="p-6">
@@ -151,34 +146,6 @@ const VideoModal = ({
           >
             <X size={24} />
           </button>
-        </div>
-
-        {/* Modal Info Overlay */}
-        <div className="absolute bottom-0 inset-x-0 p-8 md:p-12 pt-24 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="flex gap-1 mb-4">
-              {[1, 2, 3, 4, 5].map((s) => (
-                <Star
-                  key={s}
-                  size={16}
-                  className="text-emerald-500 fill-emerald-500"
-                />
-              ))}
-            </div>
-            <h3 className="text-2xl md:text-4xl font-display font-bold text-white mb-4 max-w-3xl">
-              "{video.quote}"
-            </h3>
-            <div className="flex items-center gap-4">
-              <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-              <p className="text-white/80 font-mono tracking-[0.2em] uppercase text-xs md:text-sm">
-                {video.client}
-              </p>
-            </div>
-          </motion.div>
         </div>
 
         {/* Play indicator overlay */}

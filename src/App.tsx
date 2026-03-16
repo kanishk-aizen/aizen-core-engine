@@ -14,7 +14,7 @@ import ScrollToTop from "./components/ScrollToTop";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <ReactLenis root>
+  <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
