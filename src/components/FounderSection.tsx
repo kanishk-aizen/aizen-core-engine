@@ -148,11 +148,6 @@ const FounderSection = () => {
                             className="text-white fill-white ml-1"
                           />
                         </div>
-                        <div className="px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10">
-                          <span className="text-white font-mono text-[10px] uppercase tracking-[0.4em] font-bold">
-                            Launch Intelligence
-                          </span>
-                        </div>
                       </div>
                     </motion.div>
                   ) : (

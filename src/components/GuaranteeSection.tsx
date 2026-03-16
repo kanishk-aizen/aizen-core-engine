@@ -218,9 +218,7 @@ const GuaranteeSection = () => {
                 </a>
               </Button>
               <div className="text-sm font-mono text-muted-foreground text-center sm:text-left">
-                <p className="text-foreground font-bold">
-                  No commitment. No retainers.
-                </p>
+                <p className="text-foreground font-bold">No commitment.</p>
                 <p>Just technical excellence, proven upfront.</p>
               </div>
             </div>
