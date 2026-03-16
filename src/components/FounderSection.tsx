@@ -97,8 +97,12 @@ const FounderSection = () => {
             >
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500" />
-                <div className="relative w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center text-white font-display font-bold text-2xl border border-white/10">
-                  K
+                <div className="relative w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center overflow-hidden border border-white/10">
+                  <img
+                    src="/kanishk.jpg"
+                    alt="Kanishk Jagwani"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <div>
