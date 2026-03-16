@@ -1,0 +1,4 @@
+project_id = "iygtcwlnryitxqqmkrut"
+
+[functions.generate-gameplan]
+verify_jwt = false
