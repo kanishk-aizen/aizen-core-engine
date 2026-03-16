@@ -45,7 +45,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen text-foreground overflow-x-hidden">
       {/* Main content layer — sits ABOVE the footer */}
-      <div className="relative z-10 bg-background shadow-[0_20px_50px_rgba(0,0,0,0.5)] mb-[350px] md:mb-[430px] will-change-transform">
+      <div className="relative z-10 bg-background shadow-[0_20px_50px_rgba(0,0,0,0.5)] mb-[350px] md:mb-[430px]">
         <div className="page-bg" aria-hidden="true" />
         <Navbar />
         <HeroSection onOpenGameplan={() => setGameplanOpen(true)} />

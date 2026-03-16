@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Pause, X, Star } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 const videos = [
   {
@@ -111,12 +112,12 @@ const VideoModal = ({
     setIsPlaying(!isPlaying);
   };
 
-  return (
+  const modalContent = (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8"
     >
       <div
         className="absolute inset-0 bg-background/95 backdrop-blur-3xl"
@@ -131,12 +132,16 @@ const VideoModal = ({
       >
         <video
           ref={videoRef}
-          src={video.src}
           className="w-full h-full object-contain"
           autoPlay
           playsInline
+          controls
+          preload="auto"
           onClick={togglePlay}
-        />
+        >
+          <source src={video.src} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         {/* Modal Controls */}
         <div className="absolute top-8 right-8 z-10">
@@ -166,6 +171,8 @@ const VideoModal = ({
       </motion.div>
     </motion.div>
   );
+
+  return createPortal(modalContent, document.body);
 };
 
 const VideoTestimonials = () => {
