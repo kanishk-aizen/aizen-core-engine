@@ -90,9 +90,11 @@ const VideoCard = ({
 
 const VideoModal = ({
   video,
+  isLandscape = false,
   onClose,
 }: {
   video: (typeof videos)[0];
+  isLandscape?: boolean;
   onClose: () => void;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -128,11 +130,11 @@ const VideoModal = ({
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.9, opacity: 0, y: 20 }}
-        className="relative w-full max-w-[400px] h-[85vh] aspect-[9/16] bg-black rounded-[2.5rem] overflow-hidden shadow-[0_0_100px_rgba(139,92,246,0.3)] border border-white/10 max-h-[90vh]"
+        className={`relative w-full ${isLandscape ? "max-w-5xl aspect-video" : "max-w-[400px] aspect-[9/16] h-[85vh]"} bg-black rounded-[2.5rem] overflow-hidden shadow-[0_0_100px_rgba(139,92,246,0.3)] border border-white/10 max-h-[90vh]`}
       >
         <video
           ref={videoRef}
-          className="w-full h-full object-cover"
+          className={`w-full h-full ${isLandscape ? "object-contain" : "object-cover"}`}
           autoPlay
           playsInline
           controls
@@ -225,6 +227,7 @@ const VideoTestimonials = () => {
         {activeVideoIndex !== null && (
           <VideoModal
             video={videos[activeVideoIndex]}
+            isLandscape={activeVideoIndex === 0}
             onClose={() => setActiveVideoIndex(null)}
           />
         )}
