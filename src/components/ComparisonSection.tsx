@@ -162,30 +162,30 @@ const ComparisonSection = () => (
               className="flex flex-col md:grid md:grid-cols-4 border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors group"
             >
               {/* Feature Title - Mobile Header */}
-              <div className="px-6 pt-6 pb-2 md:p-8 border-r border-white/5 flex items-center bg-white/[0.01] md:bg-transparent">
-                <span className="text-[11px] md:text-sm font-bold uppercase tracking-wider md:normal-case md:tracking-normal text-primary md:text-foreground/80 group-hover:text-primary transition-colors">
+              <div className="px-6 pt-6 pb-2 md:p-8 border-r border-white/5 flex items-center bg-white/[0.02] md:bg-transparent">
+                <span className="text-[12px] md:text-sm font-bold uppercase tracking-wider md:normal-case md:tracking-normal text-primary md:text-foreground/80 group-hover:text-primary transition-colors">
                   {f.name}
                 </span>
               </div>
 
               <div className="grid grid-cols-3 md:contents w-full">
-                <div className="p-4 md:p-8 flex flex-col md:flex-row items-center gap-3 md:gap-4 border-r border-white/5">
+                <div className="p-4 md:p-8 flex flex-col md:flex-row items-center gap-2 md:gap-4 border-r border-white/5">
                   <StatusIcon status={f.status[0]} />
-                  <span className="text-[10px] md:text-sm text-center md:text-left text-muted-foreground/60 leading-tight">
+                  <span className="text-[11px] md:text-sm text-center md:text-left text-muted-foreground/60 leading-tight">
                     {f.freelancer}
                   </span>
                 </div>
 
-                <div className="p-4 md:p-8 flex flex-col md:flex-row items-center gap-3 md:gap-4 border-r border-white/5">
+                <div className="p-4 md:p-8 flex flex-col md:flex-row items-center gap-2 md:gap-4 border-r border-white/5">
                   <StatusIcon status={f.status[1]} />
-                  <span className="text-[10px] md:text-sm text-center md:text-left text-muted-foreground/60 leading-tight">
+                  <span className="text-[11px] md:text-sm text-center md:text-left text-muted-foreground/60 leading-tight">
                     {f.agency}
                   </span>
                 </div>
 
-                <div className="p-4 md:p-8 flex flex-col md:flex-row items-center gap-3 md:gap-4 bg-primary/[0.02] border-l border-primary/20">
+                <div className="p-4 md:p-8 flex flex-col md:flex-row items-center gap-2 md:gap-4 bg-primary/[0.02] border-l border-primary/20">
                   <StatusIcon status={f.status[2]} isAizen />
-                  <span className="text-[11px] md:text-base text-center md:text-left font-bold text-foreground leading-tight">
+                  <span className="text-[12px] md:text-base text-center md:text-left font-bold text-foreground leading-tight">
                     {f.aizen}
                   </span>
                 </div>

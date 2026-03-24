@@ -13,7 +13,7 @@ const ProblemSection = () => {
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-primary mb-4 block">
             The Problem
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-8">
             The Manual Work Is Eating Your Business Alive.
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

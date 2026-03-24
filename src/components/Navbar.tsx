@@ -147,46 +147,60 @@ const Navbar = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-border overflow-hidden bg-background/95 backdrop-blur-xl"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden absolute top-full left-0 right-0 border-t border-white/5 overflow-hidden bg-background/95 backdrop-blur-2xl shadow-2xl"
           >
-            <div className="container-custom py-6 flex flex-col gap-4">
-              {links.map((l, i) =>
-                l.isExternal ? (
-                  <Link
-                    key={l.href}
-                    to={l.href}
-                    onClick={() => setOpen(false)}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
-                  >
-                    {l.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={l.href}
-                    href={
-                      location.pathname === "/" ? `#${l.href}` : `/#${l.href}`
-                    }
-                    onClick={(e) => handleNavClick(e, l.href)}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
-                  >
-                    {l.label}
-                  </a>
-                ),
-              )}
-              <BlobButton
-                onClick={() =>
-                  window.open(
-                    "https://calendly.com/aizentools/intro-call",
-                    "_blank",
-                  )
-                }
-                className="w-full h-11"
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
+            <div className="container-custom py-8 flex flex-col gap-2 relative z-10">
+              {links.map((l, i) => (
+                <motion.div
+                  key={l.href}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  {l.isExternal ? (
+                    <Link
+                      to={l.href}
+                      onClick={() => setOpen(false)}
+                      className="flex items-center justify-between text-base font-medium text-muted-foreground hover:text-primary transition-all py-3 border-b border-white/5 active:bg-white/5 rounded-lg px-2"
+                    >
+                      {l.label}
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />
+                    </Link>
+                  ) : (
+                    <a
+                      href={location.pathname === "/" ? `#${l.href}` : `/#${l.href}`}
+                      onClick={(e) => handleNavClick(e, l.href)}
+                      className="flex items-center justify-between text-base font-medium text-muted-foreground hover:text-primary transition-all py-3 border-b border-white/5 active:bg-white/5 rounded-lg px-2"
+                    >
+                      {l.label}
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />
+                    </a>
+                  )}
+                </motion.div>
+              ))}
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: links.length * 0.05 + 0.1 }}
+                className="mt-6"
               >
-                See If You Qualify
-              </BlobButton>
+                <BlobButton
+                  onClick={() =>
+                    window.open(
+                      "https://calendly.com/aizentools/intro-call",
+                      "_blank",
+                    )
+                  }
+                  className="w-full h-14 text-sm uppercase tracking-widest font-bold"
+                >
+                  See If You Qualify
+                </BlobButton>
+              </motion.div>
             </div>
           </motion.div>
         )}

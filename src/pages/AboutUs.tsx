@@ -116,7 +116,7 @@ const AboutUs = () => {
               
               <StaggeredText 
                 text="Engineered for the Future." 
-                className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50"
+                className="text-4xl md:text-7xl lg:text-8xl font-display font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 leading-[1.1]"
               />
             </div>
 
@@ -129,14 +129,14 @@ const AboutUs = () => {
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="space-y-6"
               >
-                <div className="inline-flex items-center gap-4">
-                  <div className="h-[1px] w-12 bg-primary" />
+                <div className="inline-flex items-center gap-4 w-full justify-center md:justify-start">
+                  <div className="h-[1px] w-12 bg-primary hidden md:block" />
                   <h2 className="text-sm font-mono uppercase tracking-widest text-primary">About Us</h2>
                 </div>
-                <h3 className="text-3xl font-display font-bold leading-tight">
+                <h3 className="text-3xl font-display font-bold leading-tight text-center md:text-left">
                   Where cutting-edge AI meets precision-driven software.
                 </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed text-center md:text-left">
                   Welcome to A.I.Zen. We specialize in intelligent automation, machine learning, and custom software development to drive innovation and efficiency. Our mission is to empower businesses with AI-driven solutions that enhance productivity, streamline operations, and unlock new possibilities.
                 </p>
               </motion.div>
@@ -168,16 +168,21 @@ const AboutUs = () => {
             >
               <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
               <div className="relative z-10 max-w-3xl">
-                <div className="inline-flex items-center gap-4 mb-8">
-                  <div className="h-[1px] w-12 bg-blue-500" />
+                <div className="inline-flex items-center gap-4 mb-8 w-full justify-center md:justify-start">
+                  <div className="h-[1px] w-12 bg-blue-500 hidden md:block" />
                   <h2 className="text-sm font-mono uppercase tracking-widest text-blue-400">Our Mission</h2>
                 </div>
-                <h3 className="text-3xl md:text-5xl font-display font-bold leading-tight mb-8">
+                <h3 className="text-3xl md:text-5xl font-display font-bold leading-tight mb-8 text-center md:text-left">
                   Future-ready solutions for the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">challenges of tomorrow.</span>
                 </h3>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  Our mission at A.I.Zen is to develop intelligent, scalable, and future-ready AI solutions that seamlessly integrate into businesses, enhancing efficiency, automation, and decision-making. We strive to create software that not only meets the demands of today but also anticipates the challenges of tomorrow. By combining cutting-edge AI technology with robust software engineering principles, we deliver high-performance solutions that stand the test of time. We envision a world where AI-driven software doesn’t just automate processes but elevates business intelligence, enhances human capabilities, and drives meaningful innovation.
-                </p>
+                <div className="space-y-6 text-xl text-muted-foreground leading-relaxed text-center md:text-left">
+                  <p>
+                    Our mission at A.I.Zen is to develop intelligent, scalable, and future-ready AI solutions that seamlessly integrate into businesses, enhancing efficiency, automation, and decision-making. We strive to create software that not only meets the demands of today but also anticipates the challenges of tomorrow. 
+                  </p>
+                  <p>
+                    By combining cutting-edge AI technology with robust software engineering principles, we deliver high-performance solutions that stand the test of time. We envision a world where AI-driven software doesn’t just automate processes but elevates business intelligence, enhances human capabilities, and drives meaningful innovation.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -194,11 +199,11 @@ const AboutUs = () => {
               </motion.div>
 
               <motion.div 
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-                className="flex flex-col items-center justify-center space-y-8"
+                className="flex flex-col items-center justify-center space-y-6 md:space-y-8"
               >
                 <div className="relative">
                   <motion.div 

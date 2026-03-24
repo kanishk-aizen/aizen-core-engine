@@ -212,7 +212,7 @@ const VideoTestimonials = () => {
                   <div className="flex flex-col lg:flex-row bg-[#11121c] w-full min-h-[400px]">
                     
                     {/* Left Pane: Video section */}
-                    <div className="relative w-full lg:w-1/2 aspect-video lg:aspect-auto bg-black overflow-hidden group cursor-pointer" onClick={() => setActiveVideoIndex(i)}>
+                    <div className="relative w-full lg:w-1/2 aspect-[4/5] md:aspect-video lg:aspect-auto bg-black overflow-hidden group cursor-pointer" onClick={() => setActiveVideoIndex(i)}>
                       <video
                         src={v.src}
                         className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-50 transition-opacity duration-700"
@@ -283,12 +283,18 @@ const VideoTestimonials = () => {
         </div>
         
         {/* Mobile controls indicator (optional) */}
-        <div className="flex md:hidden justify-center gap-4 mt-8">
-          <button onClick={scrollPrev} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground">
-            <ChevronLeft size={20} />
+        <div className="flex md:hidden justify-center gap-6 mt-10">
+          <button 
+            onClick={scrollPrev} 
+            className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground active:bg-primary active:text-white transition-all shadow-lg active:scale-95"
+          >
+            <ChevronLeft size={24} />
           </button>
-          <button onClick={scrollNext} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground">
-            <ChevronRight size={20} />
+          <button 
+            onClick={scrollNext} 
+            className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground active:bg-primary active:text-white transition-all shadow-lg active:scale-95"
+          >
+            <ChevronRight size={24} />
           </button>
         </div>
 
