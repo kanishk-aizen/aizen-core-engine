@@ -149,7 +149,7 @@ const AboutUs = () => {
                 className="relative group h-full min-h-[400px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
               >
                 <img 
-                  src="/about-side.png" 
+                  src="/aboutus.webp" 
                   alt="A.I.Zen Technology"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
